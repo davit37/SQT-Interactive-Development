@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Museo Sans 300';
+  src: url("MuseoSans-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal; }
+* {
+  font-family: 'Museo Sans 300', sans-serif; }
+
+body.mce-content-body {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  border-width: 0 0.1px 0 0.1px;
+  border-style: solid;
+  border-color: #929396fa;
+  width: 380px;
+  height: 100%;
+  -webkit-box-shadow: 0px 0px 17px 0px #cccccc;
+  -moz-box-shadow: 0px 0px 17px 0px #cccccc;
+  box-shadow: 0px 0px 1px 0px #cccccc; }
+
+.btn-lg:not(.rounded-circle) {
+  width: 80%;
+  font-size: 1rem;
+  line-height: 1.30; }
+.btn-lg.rounded-circle {
+  width: 75px;
+  height: 75px;
+  font-size: 0.9rem;
+  font-weight: bold; }
+
+.rm-border {
+  border-color: unset; }
+
+/*# sourceMappingURL=tinymce.css.map */

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 121.54 45"><defs><style>
+@font-face {
+   font-family: 'Museo Sans 300';
+   src: url('MuseoSans-300.woff2') format('woff2');
+   font-weight: 300;
+   font-style: normal;
+}
+.cls-1{isolation:isolate;}.cls-2{mix-blend-mode:multiply;font-size:42.45px;font-family:"Museo Sans 300", Museo Sans;letter-spacing:-0.05em;}.cls-2,.cls-3{fill:#9d9d9e;}</style></defs><title>Asset 19</title><g class="cls-1"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><text class="cls-2" transform="translate(0 36.08)">Next</text><polygon class="cls-3" points="93.79 19.48 104.46 19.48 104.46 9.75 121.54 24.93 104.46 37.58 104.46 28.33 93.79 28.33 93.79 19.48"/></g></g></g></svg>

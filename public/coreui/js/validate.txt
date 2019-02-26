@@ -1,0 +1,104 @@
+let regFilter = /\d/; //untuk cari id slide yang gak lolos validasi
+let errIn = []; //untuk nampung data filter
+var err = null;
+var cekdupl=[]
+
+
+for (var value in errorMsg) {
+    if (value.match(regFilter) != null) {
+        errIn.push(value.match(regFilter))
+    }
+}
+
+
+
+for (let [key, value] of errIn) {
+
+    console.log(!cekdupl.includes(key))
+    if (!cekdupl.includes(key)) {
+        cekdupl.push(key)
+        err = errIn.filter(errIn => errIn[0] == key)
+
+
+        console.log(`#content-${key} 'is-invalid'`)
+        $(`#content-${key}`).addClass('is-invalid');
+
+        for (let ind in err) {
+            console.log(errorMsg[err[ind]['input']])
+            $(`#slidemsg-${key}`).append(errorMsg[err[ind]['input']] + '<br>');
+        }
+
+
+    }
+}
+
+
+for (let [key, value] of errIn) {
+
+    let eer = errIn.filter(errIn => errIn[0] == key)
+
+
+    $(`#content-${key}`).addClass('is-invalid');
+
+    for (let ind in errIn) {
+        $(`#slidemsg-${key}`).html(errorMsg[eer[ind]['input']] + '<br>');
+    }
+
+
+}
+
+for (let [key, value] of errIn) {
+    if (!cekdupl.includes(key)) {
+        cekdupl.push(key)
+        let eer = errIn.filter(errIn => errIn[0] == key)
+
+
+        console.log(`#content-${key}`)
+        for (let ind in errIn) {
+            console.log(`#slidemsg-${key}`)
+        }
+
+
+    }
+}
+
+
+for (let [key, value] of errIn) {
+    if (!cekdupl.includes(key)) {
+        cekdupl.push(key)
+        let eer = errIn.filter(errIn => errIn[0] == key)
+
+
+        $(`#content-${key}`).addClass('is-invalid');
+        for (let ind in err) {
+            $(`#slidemsg-${key}`).html(errorMsg[eer[ind]['input']] + '<br>');
+        }
+
+
+    }
+}
+
+
+
+for (let [key, value] of errIn) {
+
+    console.log(!cekdupl.includes(key))
+    if (!cekdupl.includes(key)) {
+        cekdupl.push(key)
+        err = errIn.filter(errIn => errIn[0] == key)
+
+
+        console.log(`#content-${key} 'is-invalid'`)
+        $(`#content-${key}`).addClass('is-invalid');
+
+        for (let ind in err) {
+            console.log(errorMsg[err[ind]['input']])
+            $(`#slidemsg-${key}`).html(errorMsg[eer[ind]['input']] + '<br>');
+        }
+
+
+    }
+}
+
+
+$('#category-name').addClass('is-invalid');
