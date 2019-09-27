@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = \App\User::paginate(5);
+        $users = \App\User::get();
 
         return view('admin.users.index', ['users'=>$users]);
     }
@@ -43,12 +43,12 @@ class UserController extends Controller
     {
         \Validator::make($request->all(),[
             "name" => "required|min:5|max:100",
-            "username" => "required|min:5|max:20",
+            "username" => "required|min:5|max:20|unique:users",
             
             "phone" => "required|digits_between:10,13",
             "address" => "required|min:10|max:200",
             
-            "email" => "required|email",
+            "email" => "required|email|unique:users",
             "password" => "required",
             "password_confirmation" => "required|same:password",
             
@@ -62,13 +62,14 @@ class UserController extends Controller
         $new_users->phone = $request->get('phone');
         $new_users->email = $request->get('email');
         $new_users->password = \Hash::make($request->get('password'));
-        if($request->file('avatar')){
-            $file = $request->file('avatar')->store('avatars', 'public');
         
-            $new_users->avatar = $file;
-        }
-        $new_users->save();
-        return redirect()->route('users.create')->with('status','User Secessfully Created');
+        
+        $insert= $new_users->save();
+
+      
+
+     
+        return redirect()->route('users.index')->with('status','User Secessfully Created');
     }
 
     /**
@@ -107,7 +108,7 @@ class UserController extends Controller
     {
         \Validator::make($request->all(), [
             "name" => "required|min:5|max:100",
-            
+            "username" => "required|min:5|max:20|unique:users,username,".$id,
             "phone" => "required|digits_between:10,12",
             "address" => "required|min:10|max:200",
         ])->validate();
@@ -129,7 +130,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('users.edit', ['id' => $id])->with('status', 'User succesfully updated');
+        return redirect()->route('users.index')->with('status', 'User succesfully updated');
     }
 
     /**

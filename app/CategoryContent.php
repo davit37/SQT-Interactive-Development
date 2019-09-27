@@ -18,6 +18,9 @@ class CategoryContent extends Model
     public function projects(){
         return $this->belongsTo('\App\Project','project_category_id');
     }
+    public function labels(){
+        return $this->belongsToMany('\App\Label','category_labels')->orderBy('category_labels.id');
+    }
 
     
 }

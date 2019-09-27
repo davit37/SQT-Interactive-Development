@@ -17,4 +17,11 @@ class ProjectCategory extends Model
     public function projects(){
         return $this->hasMany('\App\Project','project_category_id');
     }
+
+    public function Menus(){
+        return $this->hasMany('\App\Menu','project_category_id','project_category_id')->orderBy('order');
+    }
+
+
+
 }
